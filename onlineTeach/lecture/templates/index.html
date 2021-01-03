@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<p></p>
+<hr>
+
+{% load embed_video_tags %}
+<ul>
+{% for i in Item %}
+    <li><h2>{{i.title}}</h2><br>
+   {% video i.video as my_video %}
+  {% video my_video "small" %}
+{% endvideo %}
+<br>
+        {{i.desc}}</li>
+    <hr>
+    <br>
+    <p></p>
+{% endfor %}
+</ul>
+{% endblock body %}
